@@ -44,3 +44,10 @@ function draw() {
     }
   }
 }
+
+function keyPressed() {
+ if (key === 's') {
+   saveGif('mySketch', 5); // Saves a 5-second GIF
+ }
+}
+
