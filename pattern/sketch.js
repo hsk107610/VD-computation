@@ -1,38 +1,37 @@
-const GRID = 6;
+const GRID = 2;
 const CELL = 1080 / GRID;
-//1080 / 2 = 540
-
 
 function setup() {
-  createCanvas(1080, 1080);
-  noStroke();
-  noLoop();
+ createCanvas(1080, 1080);
+ noStroke();
+ // frameRate(2);
+ noLoop();
 }
 
 function draw() {
+ background(255, 255, 220);
+ const cz = random(40, CELL);
+ const sz = random(40, CELL);
 
-  background(2255,255,220);
+ for (let gy = 0; gy < GRID; gy++) {
 
-   for (let gy = 0; gy < GRID; gy++) {
-    console.log('gy = ' + gy);
-    const cy = gy * CELL + CELL / 2;
-    // = 0 * 540 + 540 /2
-    // 0 +270
-    // cy = 270
+   for (let gx = 0; gx < GRID; gx++) {
+     const cx = gx * CELL + CELL / 2;
+     const cy = gy * CELL + CELL / 2;
 
-  push();
-  blendMode(MULTIPLY);
-  fill('cyan');
-  circle(cy, cy, random(300,500));
-  pop();
+     push();
+     blendMode(MULTIPLY);
+     fill('cyan');
+     circle(cx, cy, cz);
+     pop();
 
-  push();
-  blendMode(MULTIPLY);
-  translate(width/2, height/2);
-  fill('pink');
-  rectMode(CENTER);
-  const sz = random(300,500);
-  rect(0, 0, sz, sz);
-  pop();
-}
+     push();
+     blendMode(MULTIPLY);
+     translate(cx, cy);
+     fill('pink');
+     rectMode(CENTER);
+     rect(0, 0, sz, sz);
+     pop();
+   }
+ }
 }
