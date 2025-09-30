@@ -1,11 +1,11 @@
-const GRID = 2;
+const GRID = 9;
 const CELL = 1080 / GRID;
 
 function setup() {
  createCanvas(1080, 1080);
  noStroke();
- // frameRate(2);
- noLoop();
+ frameRate(6);
+ //noLoop();
 }
 
 function draw() {
@@ -34,4 +34,10 @@ function draw() {
      pop();
    }
  }
+}
+
+function keyPressed() {
+  if (key === 's') {
+    saveGif('mySketch', 5);
+  }
 }
