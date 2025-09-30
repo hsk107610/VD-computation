@@ -9,9 +9,9 @@ function setup() {
 }
 
 function draw() {
- background(255, 255, 220);
- const cz = random(40, CELL);
- const sz = random(40, CELL);
+ background(255, 255, 0);
+ const cz = random(0, CELL);
+ const sz = random(50, CELL);
 
  for (let gy = 0; gy < GRID; gy++) {
 
@@ -20,8 +20,8 @@ function draw() {
      const cy = gy * CELL + CELL / 2;
 
      push();
-     blendMode(MULTIPLY);
-     fill('cyan');
+     blendMode(OVERLAY);
+     fill('black');
      circle(cx, cy, cz);
      pop();
 
@@ -30,7 +30,7 @@ function draw() {
      translate(cx, cy);
      fill('pink');
      rectMode(CENTER);
-     rect(0, 0, sz, sz);
+     rect(0, 60, sz, sz);
      pop();
    }
  }
@@ -38,6 +38,6 @@ function draw() {
 
 function keyPressed() {
   if (key === 's') {
-    saveGif('mySketch', 5);
+    saveGif('mySketch', 1);
   }
 }
