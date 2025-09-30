@@ -1,0 +1,15 @@
+function setup() {
+ createCanvas(1080, 1080);
+ noStroke();
+}
+
+function draw(){
+ background(2255,255,220);
+ fill('orange');
+ circle(width/2, height/2, 400);
+
+ translate(width/2, height/2);
+ fill('pink');
+ rectMode(CENTER);
+ rect(0, 0, 380, 380);
+}
