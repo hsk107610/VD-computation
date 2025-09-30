@@ -1,17 +1,29 @@
+const GRID = 6;
+const CELL = 1080 / GRID;
+//1080 / 2 = 540
+
+
 function setup() {
   createCanvas(1080, 1080);
   noStroke();
-  //noLoop();
+  noLoop();
 }
 
 function draw() {
 
-  background(255,255,220);
+  background(2255,255,220);
+
+   for (let gy = 0; gy < GRID; gy++) {
+    console.log('gy = ' + gy);
+    const cy = gy * CELL + CELL / 2;
+    // = 0 * 540 + 540 /2
+    // 0 +270
+    // cy = 270
 
   push();
   blendMode(MULTIPLY);
   fill('cyan');
-  circle(width/2, height/2, random(300,500));
+  circle(cy, cy, random(300,500));
   pop();
 
   push();
@@ -22,4 +34,5 @@ function draw() {
   const sz = random(300,500);
   rect(0, 0, sz, sz);
   pop();
+}
 }
